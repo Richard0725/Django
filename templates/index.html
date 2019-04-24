@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最受关注图书榜</title>
+</head>
+<style type="text/css">
+body,table{
+font-size:12px;
+}
+table{
+table-layout:fixed;
+empty-cells:show;
+border-collapse: collapse;
+margin:0 auto;
+}
+td{
+height:30px;
+}
+
+h1{
+font-size:44px;
+margin:0;
+padding:0;
+}
+
+h2,h3{
+font-size:12px;
+margin:0;
+padding:0;
+}
+.table{
+border:1px solid #cad9ea;
+color:black;
+}
+.table th {
+background-repeat:repeat-x;
+height:30px;
+}
+.table td,.table th{
+border:1px solid #cad9ea;
+padding:0 1em 0;
+}
+.table tr.alter{
+background-color:#f5fafe;
+}
+</style>
+<body bgcolor="#5f9ea0">
+<h1 align="center" ><b>最受关注图书榜</b></h1>
+
+<table>
+    {% for i in li %}
+
+<table border="2" class="table">
+    <th><h3>书名：{{ i.title }}</h3></th>
+
+   <td><p> <img src={{ i.imgs }} width="90" ></p></td>
+    <th><h5>详情：{{ i.detail }}</h5>
+       </th>
+</table>
+
+{% endfor %}
+</table>
+
+</body>
+
+</html>
